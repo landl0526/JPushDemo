@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPushDemo", "JPushDemo\JPushDemo.csproj", "{101E3060-8799-4119-8A7A-4F86A01C0C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestExtension", "MyTestExtension\MyTestExtension.csproj", "{624E820E-E2BE-463B-A681-1DF7D579F802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhone.Build.0 = Debug|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhone.Deploy.0 = Debug|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhone.ActiveCfg = Release|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhone.Build.0 = Release|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhone.Deploy.0 = Release|iPhone
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{101E3060-8799-4119-8A7A-4F86A01C0C84}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Debug|iPhone.Build.0 = Debug|iPhone
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Release|iPhone.ActiveCfg = Release|iPhone
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Release|iPhone.Build.0 = Release|iPhone
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{624E820E-E2BE-463B-A681-1DF7D579F802}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6F736F8-3A06-4EE9-9302-FD697ABCECDB}
+	EndGlobalSection
+EndGlobal
