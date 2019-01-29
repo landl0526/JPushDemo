@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -22,26 +23,38 @@ namespace MyTestExtension
             BestAttemptContent = (UNMutableNotificationContent)request.Content.MutableCopy();
 
             // Modify the notification content here...
-            //self.bestAttemptContent.title = @"";
-            //self.bestAttemptContent.subtitle = @"";
-            //self.bestAttemptContent.body = @"";
+            BestAttemptContent.Title = @"Luting";
+            //this.bestAttemptContent.subtitle = @"";
+            //this.bestAttemptContent.body = @"";
 
             // Set the attachment
-            NSDictionary dict = BestAttemptContent.UserInfo;
-            NSString imgUrl = dict["imageAbsoluteString"] as NSString;
+            //NSDictionary dict = BestAttemptContent.UserInfo;
+            //NSString imgUrl = dict["imageAbsoluteString"] as NSString;
 
-            if (imgUrl.Length == null)
-            {
-                ContentHandler(BestAttemptContent);
-            }
-            loadAttachmentForUrlString(imgUrl, "png", (attach) =>
-            {
-                if (attach != null)
-                {
-                    BestAttemptContent.Attachments = new UNNotificationAttachment[] { attach };
-                }
-                ContentHandler(BestAttemptContent);
-            });
+            //if (imgUrl.Length == null)
+            //{
+            //    ContentHandler(BestAttemptContent);
+            //}
+            //loadAttachmentForUrlString(imgUrl, "png", (attach) =>
+            //{
+            //    if (attach != null)
+            //    {
+            //        BestAttemptContent.Attachments = new UNNotificationAttachment[] { attach };
+            //    }
+            //    ContentHandler(BestAttemptContent);
+            //});
+
+
+            string suiteName = "group.com.companyname.ExtensionDemo";
+            var appGroupContainerUrl = NSFileManager.DefaultManager.GetContainerUrl(suiteName);
+            var directoryNameInAppGroupContainer = Path.Combine(appGroupContainerUrl.Path, "Pictures");
+
+            var filenameDestPath = Path.Combine(directoryNameInAppGroupContainer, "MyPic.png");
+
+            NSError attachmentError = null;
+            UNNotificationAttachment attachment = UNNotificationAttachment.FromIdentifier("", new NSUrl(filenameDestPath, false), options: null, error: out attachmentError);
+            BestAttemptContent.Attachments = new UNNotificationAttachment[] { attach };
+            contentHandler(BestAttemptContent);
         }
 
         delegate void CompletionHandler(UNNotificationAttachment attach);

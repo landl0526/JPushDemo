@@ -1,6 +1,7 @@
 ﻿using CoreLocation;
 using Foundation;
 using System;
+using System.IO;
 using System.Linq;
 using UIKit;
 
@@ -26,9 +27,12 @@ namespace JPushDemo
             location.AllowsBackgroundLocationUpdates = true;
             location.DesiredAccuracy = CLLocation.AccuracyHundredMeters;
             location.Delegate = new MyLocationDelegate(location);
+
+
+            //group.com.companyname.ExtensionDemo
         }
 
-		public override void DidReceiveMemoryWarning ()
+        public override void DidReceiveMemoryWarning ()
 		{
 			base.DidReceiveMemoryWarning ();
 			// Release any cached data, images, etc that aren't in use.
@@ -36,7 +40,29 @@ namespace JPushDemo
 
         partial void LocationBtnClick(UIKit.UIButton sender)
         {
-            location.RequestLocation();
+            //location.RequestLocation();
+
+            string suiteName = "group.com.companyname.ExtensionDemo";
+            var appGroupContainerUrl = NSFileManager.DefaultManager.GetContainerUrl(suiteName);
+            var directoryNameInAppGroupContainer = Path.Combine(appGroupContainerUrl.Path, "Pictures");
+
+            var filenameDestPath = Path.Combine(directoryNameInAppGroupContainer, "MyPic.png");
+
+            try
+            {
+                Directory.CreateDirectory(directoryNameInAppGroupContainer);
+
+                if (File.Exists(filenameDestPath))
+                {
+                    File.Delete(filenameDestPath);
+                }
+
+                File.Copy(NSBundle.MainBundle.PathForResource("charm.png", null), filenameDestPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
     public class MyLocationDelegate : CLLocationManagerDelegate

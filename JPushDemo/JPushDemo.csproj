@@ -114,7 +114,12 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ProjectReference Include="..\MyTestExtension\MyTestExtension.csproj">
+      <Project>{624e820e-e2be-463b-a681-1df7d579f802}</Project>
+      <Name>MyTestExtension</Name>
+      <IsAppExtension>true</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -136,12 +141,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyTestExtension\MyTestExtension.csproj">
-      <Project>{624e820e-e2be-463b-a681-1df7d579f802}</Project>
-      <Name>MyTestExtension</Name>
-      <IsAppExtension>true</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
+    <BundleResource Include="Resources\charm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
