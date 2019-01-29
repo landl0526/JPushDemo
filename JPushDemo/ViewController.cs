@@ -57,7 +57,7 @@ namespace JPushDemo
                     File.Delete(filenameDestPath);
                 }
 
-                File.Copy(NSBundle.MainBundle.PathForResource("charm.png", null), filenameDestPath);
+                File.Copy(NSBundle.MainBundle.PathForResource("white.jpg", null), filenameDestPath);
             }
             catch (Exception ex)
             {

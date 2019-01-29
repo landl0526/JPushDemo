@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -51,9 +52,12 @@ namespace MyTestExtension
 
             var filenameDestPath = Path.Combine(directoryNameInAppGroupContainer, "MyPic.png");
 
+            var localDoc = NSSearchPath.GetDirectories(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User).FirstOrDefault();
+            var localPath = Path.Combine(localDoc, "MyPic.png");
+
             NSError attachmentError = null;
-            UNNotificationAttachment attachment = UNNotificationAttachment.FromIdentifier("", new NSUrl(filenameDestPath, false), options: null, error: out attachmentError);
-            BestAttemptContent.Attachments = new UNNotificationAttachment[] { attach };
+            UNNotificationAttachment attachment = UNNotificationAttachment.FromIdentifier("", new NSUrl(localPath, false), options: null, error: out attachmentError);
+            BestAttemptContent.Attachments = new UNNotificationAttachment[] { attachment };
             contentHandler(BestAttemptContent);
         }
 
