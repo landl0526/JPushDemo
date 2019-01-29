@@ -54,6 +54,8 @@ namespace MyTestExtension
 
             var localDoc = NSSearchPath.GetDirectories(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User).FirstOrDefault();
             var localPath = Path.Combine(localDoc, "MyPic.png");
+            NSError error = null;
+            NSFileManager.DefaultManager.Copy(filenameDestPath, localPath, out error);
 
             NSError attachmentError = null;
             UNNotificationAttachment attachment = UNNotificationAttachment.FromIdentifier("", new NSUrl(localPath, false), options: null, error: out attachmentError);
